@@ -77,10 +77,10 @@ const Index = () => {
         canvas.width = img.width;
         canvas.height = img.height;
 
-        // Apply gradient background (themed)
+        // Apply gradient background (blue/teal theme)
         const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-        gradient.addColorStop(0, "#7c3aed");
-        gradient.addColorStop(1, "#c026d3");
+        gradient.addColorStop(0, "#0ea5e9");
+        gradient.addColorStop(1, "#14b8a6");
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
