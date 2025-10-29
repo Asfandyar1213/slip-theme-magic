@@ -74,8 +74,8 @@ const Index = () => {
       // Load original image to get dimensions
       const img = new Image();
       img.onload = () => {
-        canvas.width = img.width;
-        canvas.height = img.height;
+        canvas.width = 800;
+        canvas.height = 1200;
 
         // Apply gradient background (Kasikorn Bank style: deep red-purple)
         const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
@@ -90,19 +90,118 @@ const Index = () => {
           ctx.fillRect(0, i, canvas.width, 1);
         }
 
-        // Draw extracted text
-        ctx.fillStyle = "white";
-        ctx.textAlign = "center";
+        // Draw Kasikorn Bank logo (simplified green plant in red circle)
+        ctx.fillStyle = "#c13832";
+        ctx.beginPath();
+        ctx.arc(canvas.width / 2, 80, 40, 0, Math.PI * 2);
+        ctx.fill();
         
-        if (data.textElements && Array.isArray(data.textElements)) {
-          data.textElements.forEach((element: any) => {
-            const fontSize = element.fontSize === "large" ? 24 : element.fontSize === "small" ? 12 : 16;
-            ctx.font = `${fontSize}px Arial, sans-serif`;
-            const x = (element.x / 100) * canvas.width;
-            const y = (element.y / 100) * canvas.height;
-            ctx.fillText(element.text, x, y);
-          });
-        }
+        ctx.fillStyle = "#4caf50";
+        ctx.font = "bold 40px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText("🌿", canvas.width / 2, 95);
+
+        // Company name in gold
+        ctx.fillStyle = "#f4d03f";
+        ctx.font = "bold 28px Arial";
+        ctx.fillText("KASIKORN BANK", canvas.width / 2, 160);
+
+        // Date at top
+        ctx.fillStyle = "white";
+        ctx.font = "18px Arial";
+        const currentDate = new Date().toLocaleDateString("th-TH", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+        ctx.fillText(currentDate, canvas.width / 2, 200);
+
+        // Divider line
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.3)";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(50, 230);
+        ctx.lineTo(canvas.width - 50, 230);
+        ctx.stroke();
+
+        // Sender → Receiver section
+        ctx.fillStyle = "white";
+        ctx.font = "20px Arial";
+        ctx.textAlign = "left";
+        ctx.fillText("จาก (From)", 60, 280);
+        
+        ctx.font = "bold 24px Arial";
+        ctx.fillText("ผู้ส่ง (Sender)", 60, 315);
+
+        // Arrow
+        ctx.font = "30px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText("→", canvas.width / 2, 315);
+
+        ctx.font = "20px Arial";
+        ctx.textAlign = "right";
+        ctx.fillText("ถึง (To)", canvas.width - 60, 280);
+        
+        ctx.font = "bold 24px Arial";
+        ctx.fillText("ผู้รับ (Receiver)", canvas.width - 60, 315);
+
+        // Divider line
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.3)";
+        ctx.beginPath();
+        ctx.moveTo(50, 350);
+        ctx.lineTo(canvas.width - 50, 350);
+        ctx.stroke();
+
+        // Transaction details
+        let yPos = 400;
+        ctx.fillStyle = "white";
+        ctx.font = "20px Arial";
+        ctx.textAlign = "left";
+
+        // Reference
+        ctx.fillText("เลขที่อ้างอิง (Reference)", 60, yPos);
+        ctx.font = "bold 22px Arial";
+        ctx.fillText("XXXXXXXXXX", 60, yPos + 30);
+        yPos += 80;
+
+        // Amount in gold
+        ctx.font = "20px Arial";
+        ctx.fillText("จำนวนเงิน (Amount)", 60, yPos);
+        ctx.fillStyle = "#f4d03f";
+        ctx.font = "bold 36px Arial";
+        ctx.fillText("฿ X,XXX.XX", 60, yPos + 40);
+        yPos += 100;
+
+        // Fee
+        ctx.fillStyle = "white";
+        ctx.font = "20px Arial";
+        ctx.fillText("ค่าธรรมเนียม (Fee)", 60, yPos);
+        ctx.font = "bold 22px Arial";
+        ctx.fillText("฿ 0.00", 60, yPos + 30);
+        yPos += 80;
+
+        // Divider line
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.3)";
+        ctx.beginPath();
+        ctx.moveTo(50, yPos);
+        ctx.lineTo(canvas.width - 50, yPos);
+        ctx.stroke();
+
+        // QR Code placeholder
+        yPos += 50;
+        ctx.fillStyle = "white";
+        ctx.fillRect(canvas.width / 2 - 100, yPos, 200, 200);
+        ctx.fillStyle = "#a8305a";
+        ctx.font = "20px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText("QR CODE", canvas.width / 2, yPos + 110);
+
+        // Thai text at bottom
+        ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
+        ctx.font = "16px Arial";
+        ctx.fillText("สแกนตรวจสอบสลิป", canvas.width / 2, yPos + 250);
 
         setProcessedImage(canvas.toDataURL("image/png"));
         toast({
