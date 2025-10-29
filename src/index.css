@@ -8,71 +8,71 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
+    --background: 340 40% 12%;
+    --foreground: 0 0% 100%;
 
-    --card: 222 47% 15%;
-    --card-foreground: 210 40% 98%;
+    --card: 340 35% 18%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222 47% 15%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 340 35% 18%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 199 89% 48%;
+    --primary: 350 65% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 340 30% 25%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 340 30% 25%;
+    --muted-foreground: 0 0% 75%;
 
-    --accent: 173 80% 40%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 90% 55%;
+    --accent-foreground: 340 40% 12%;
 
     --destructive: 0 62.8% 50.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 199 89% 48%;
+    --border: 340 30% 25%;
+    --input: 340 30% 25%;
+    --ring: 45 90% 55%;
 
     --radius: 0.75rem;
 
-    /* Custom gradients and colors */
-    --gradient-primary: linear-gradient(135deg, hsl(199 89% 48%), hsl(173 80% 40%));
-    --gradient-card: linear-gradient(135deg, hsl(222 47% 15%), hsl(222 47% 13%));
-    --shadow-glow: 0 0 40px hsl(199 89% 48% / 0.25);
+    /* Custom gradients and colors - Kasikorn Bank style */
+    --gradient-primary: linear-gradient(135deg, hsl(350 65% 45%), hsl(280 55% 40%));
+    --gradient-card: linear-gradient(135deg, hsl(340 35% 18%), hsl(340 35% 15%));
+    --shadow-glow: 0 0 40px hsl(350 65% 45% / 0.3);
     --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
+    --background: 340 40% 12%;
+    --foreground: 0 0% 100%;
 
-    --card: 222 47% 15%;
-    --card-foreground: 210 40% 98%;
+    --card: 340 35% 18%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222 47% 15%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 340 35% 18%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 199 89% 48%;
+    --primary: 350 65% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 340 30% 25%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 340 30% 25%;
+    --muted-foreground: 0 0% 75%;
 
-    --accent: 173 80% 40%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 90% 55%;
+    --accent-foreground: 340 40% 12%;
 
     --destructive: 0 62.8% 50.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 199 89% 48%;
+    --border: 340 30% 25%;
+    --input: 340 30% 25%;
+    --ring: 45 90% 55%;
   }
 }
 

@@ -77,10 +77,10 @@ const Index = () => {
         canvas.width = img.width;
         canvas.height = img.height;
 
-        // Apply gradient background (blue/teal theme)
+        // Apply gradient background (Kasikorn Bank style: deep red-purple)
         const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-        gradient.addColorStop(0, "#0ea5e9");
-        gradient.addColorStop(1, "#14b8a6");
+        gradient.addColorStop(0, "#a8305a");
+        gradient.addColorStop(1, "#7b3897");
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
